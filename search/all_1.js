@@ -11,6 +11,5 @@ var searchData=
   ['rf69_5fspiburstwrite',['rf69_spiBurstWrite',['../group__ukhasnet-rfm69.html#ga57acad11a68f5aec97467b61fd4e0b5e',1,'ukhasnet-rfm69.c']]],
   ['rf69_5fspififowrite',['rf69_spiFifoWrite',['../group__ukhasnet-rfm69.html#ga1dcb232d86e7786cf2e2c517e1cbb3e2',1,'ukhasnet-rfm69.c']]],
   ['rf69_5fspiread',['rf69_spiRead',['../group__ukhasnet-rfm69.html#ga9f98251d223ea5c157dbdf81b9177fab',1,'ukhasnet-rfm69.c']]],
-  ['rf69_5fspiwrite',['rf69_spiWrite',['../group__ukhasnet-rfm69.html#gacafa4bb6a1a80221b7c709325efb8d01',1,'ukhasnet-rfm69.c']]],
-  ['rfm69_5finit',['rfm69_init',['../group__ukhasnet-rfm69.html#gaefdd1c0fb1b998c4e4c7f59c2b676329',1,'ukhasnet-rfm69.h']]]
+  ['rf69_5fspiwrite',['rf69_spiWrite',['../group__ukhasnet-rfm69.html#gacafa4bb6a1a80221b7c709325efb8d01',1,'ukhasnet-rfm69.c']]]
 ];
