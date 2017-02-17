@@ -19,7 +19,6 @@
 #ifndef __SPI_CONF_H__
 #define __SPI_CONF_H__
 
-#include <avr/io.h>
 #include <stdint.h>
 #include <stdbool.h>
 

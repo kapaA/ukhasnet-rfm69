@@ -25,8 +25,7 @@
  * @{
  */
 
-#include <avr/io.h>
-#include <util/delay.h>
+// #include <util/delay.h>
 
 #include "ukhasnet-rfm69.h"
 #include "ukhasnet-rfm69-config.h"
@@ -49,7 +48,10 @@ rfm_status_t rf69_init(void)
 
     /* Set up device */
     for (i = 0; CONFIG[i][0] != 255; i++)
+    {
         _rf69_write(CONFIG[i][0], CONFIG[i][1]);
+        printf("%x %x\n",CONFIG[i][0], CONFIG[i][1]);
+    }
     
     /* Set initial mode */
     _mode = RFM69_MODE_RX;
@@ -367,7 +369,8 @@ rfm_status_t rf69_read_temp(int8_t* temperature)
     temp = 0;
     while (!(RF_TEMP1_MEAS_RUNNING & temp)) {
         _rf69_read(RFM69_REG_4E_TEMP1, &temp);
-        _delay_ms(1);
+        //_delay_ms(1);
+        usleep(1000);
         if(++timeout > 50)
         {
             *temperature = -127.0;
@@ -381,7 +384,8 @@ rfm_status_t rf69_read_temp(int8_t* temperature)
     temp = 0;
     while (RF_TEMP1_MEAS_RUNNING & temp) {
         _rf69_read(RFM69_REG_4E_TEMP1, &temp);
-        _delay_ms(1);
+        //_delay_ms(1);
+        usleep(1000);
         if(++timeout > 10)
         {
             *temperature = -127.0;

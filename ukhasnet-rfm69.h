@@ -10,7 +10,9 @@
 #define __RFM69_H__
 
 #include <stdint.h>
+#include <unistd.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 /* Size of a register in the RFM */
 typedef uint8_t rfm_reg_t;
