@@ -19,6 +19,9 @@
 #include "../ukhasnet-rfm69.h"
 #include "spi_conf.h"
 #include "spi/spi.h"
+#include <string.h>
+
+#define CSN         LATBbits.LATB7    //SPI enable, active low
 
 /**
  * User SPI setup function. Use this function to set up the SPI peripheral
@@ -67,6 +70,9 @@ rfm_status_t spi_ss_assert(void)
      * You should return RFM_OK if everything went well, otherwise return
      * RFM_FAIL or RFM_TIMEOUT to signal that something went wrong.
      * */
+    
+    CSN = 0;
+    
     return RFM_OK;
 }
 
@@ -82,6 +88,8 @@ rfm_status_t spi_ss_deassert(void)
      * You should return RFM_OK if everything went well, otherwise return
      * RFM_FAIL or RFM_TIMEOUT to signal that something went wrong.
      * */
+    
+    CSN = 1;
     return RFM_OK;
 }
 
