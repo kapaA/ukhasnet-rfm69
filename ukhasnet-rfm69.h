@@ -10,7 +10,6 @@
 #define __RFM69_H__
 
 #include <stdint.h>
-#include <unistd.h>
 #include <stdbool.h>
 #include <stdio.h>
 

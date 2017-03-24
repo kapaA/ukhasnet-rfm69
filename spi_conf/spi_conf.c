@@ -16,8 +16,9 @@
  * Based on RFM69 LowPowerLabs (https://github.com/LowPowerLab/RFM69/)
  */
 
-#include "ukhasnet-rfm69.h"
+#include "../ukhasnet-rfm69.h"
 #include "spi_conf.h"
+#include "spi/spi.h"
 
 /**
  * User SPI setup function. Use this function to set up the SPI peripheral
@@ -27,12 +28,7 @@
  */
 rfm_status_t spi_init(void)
 {
-    /* Set up the SPI peripheral */
-
-    /*
-     * You should return RFM_OK if everything went well, otherwise return
-     * RFM_FAIL or RFM_TIMEOUT to signal that something went wrong.
-     * */
+    
     return RFM_OK;
 }
 
@@ -47,6 +43,10 @@ rfm_status_t spi_init(void)
 rfm_status_t spi_exchange_single(const rfm_reg_t out, rfm_reg_t* in)
 {
     /* Insert code to send a byte and receive a byte at the same time */
+    
+    rfm_reg_t  data_in = 0;
+    data_in = SPI_wr(out);
+    in = &data_in;
 
     /*
      * You should return RFM_OK if everything went well, otherwise return
