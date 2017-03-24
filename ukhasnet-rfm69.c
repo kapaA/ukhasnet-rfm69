@@ -43,7 +43,6 @@ rfm_status_t rf69_init(void)
 {
     uint8_t i;
     rfm_reg_t res;
-    char s[200];
 
     /* Call the user setup function to configure the SPI peripheral */
     if (spi_init() != RFM_OK)
@@ -53,8 +52,6 @@ rfm_status_t rf69_init(void)
     for (i = 0; CONFIG[i][0] != 255; i++)
     {
         _rf69_write(CONFIG[i][0], CONFIG[i][1]);
-        sprintf(s,"%x %x\n",CONFIG[i][0], CONFIG[i][1]);
-        uart_print(s);
     }
     
     /* Set initial mode */
