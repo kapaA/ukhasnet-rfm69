@@ -46,7 +46,7 @@ rfm_status_t spi_exchange_single(const rfm_reg_t out, rfm_reg_t* in)
     
     rfm_reg_t  data_in = 0;
     data_in = SPI_wr(out);
-    in = &data_in;
+    memcpy(in, &data_in, sizeof(data_in));
 
     /*
      * You should return RFM_OK if everything went well, otherwise return
